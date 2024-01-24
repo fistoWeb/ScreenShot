@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Screen Shot</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <section class="img-section-container">
+        <section class="img-section">
+            <div class="testing-forms">
+                <h1>Testing Screen Image</h1>
+                <img src="./testimg3.jpg" alt="">
+            </div>
+            <form action="#" class="img-form">
+                <div class="row1">
+                    <div class="username">
+                    <span>Username: </span>  <input type="text" placeholder="Enter Username" value="test1">
+                </div>
+                <div class="email-id">
+                    <span>Email Id: </span>  <input type="email" placeholder="Enter Email Id" value="test2">
+                </div>
+                </div>
+                
+                <div class="row2">
+                    <div class="password">
+                    <span>Password: </span>  <input type="password" placeholder="Enter Password" value="test3">
+                </div>
+                <div class="confirm-password">
+                    <span>Confirm Password: </span>  <input type="password" placeholder="Enter Confirm Password" value="test4">
+                </div>
+                </div>
+                
+                <div class="row3">
+                    <div class="age">
+                    <span>Age: </span>  <input type="text" placeholder="Enter Age" value="test5">
+                </div>
+                <div class="mobile-no">
+                    <span>Mobile Number: </span> <input type="text" placeholder="Enter Mobile Number" value="test6">
+                </div>
+                </div>
+                
+            </form>
+
+            <div class="img-text">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam fugit soluta odio nobis ratione ipsum rem quasi dicta temporibus porro veritatis perspiciatis molestias, perferendis nesciunt ipsam iusto non harum aspernatur?</p>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ratione maxime doloremque debitis dolor asperiores, laudantium harum vitae porro rerum quae amet similique quas est minima perferendis aliquam, sint voluptatem maiores corporis voluptas. Distinctio eum provident dolore assumenda minus ducimus voluptatibus iure quasi aspernatur molestiae. Eos quo delectus magnam repellat illum!</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil doloribus vitae perspiciatis at amet dolor ex itaque expedita modi eligendi hic sit reprehenderit natus nostrum beatae molestias dolores, soluta saepe!</p>
+            </div>
+        </section> 
+        <button onclick="saveAsPng()" class="download-btn">Download</button>
+    </section>
+
+   
+
+    <script>
+        
+        function saveAsPng() {
+            let container = document.querySelector('.img-section');
+            html2canvas(container).then(function(canvas) {
+                let link = document.createElement('a');
+                link.href = canvas.toDataURL('image/png');
+                link.download = 'image.png';
+                link.click();
+            });
+        }
+    
+    </script>
+    
+
+    <script src="./js/script.js"></script>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+</body>
+</html>
